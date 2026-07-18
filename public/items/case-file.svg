@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <rect x="26" y="22" width="68" height="82" fill="#f2f2ea" stroke="#201d14" stroke-width="3"/>
+  <rect x="36" y="36" width="48" height="8" fill="#201d14"/>
+  <rect x="36" y="50" width="48" height="6" fill="#9c2626"/>
+  <rect x="36" y="60" width="30" height="6" fill="#201d14" opacity="0.5"/>
+  <rect x="36" y="72" width="48" height="6" fill="#9c2626"/>
+  <rect x="36" y="84" width="22" height="6" fill="#201d14" opacity="0.5"/>
+  <text x="60" y="30" font-family="monospace" font-size="8" fill="#9c2626" text-anchor="middle">Nº 333</text>
+</svg>
