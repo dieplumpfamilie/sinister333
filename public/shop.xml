@@ -16,11 +16,11 @@
 -->
 <shop>
   <item>
-    <tag>AFD</tag>
-    <name>BUNDESTAG SIEG</name>
-    <image>/items/Stonistanwar.svg</image>
-    <description>Übernehme den Bundestag sofort und führe eine Diktatur ein.</description>
-    <price>1 Niere</price>
+    <tag>DRINK</tag>
+    <name>Weißer Energy Drink</name>
+    <image>/items/energy-drink.svg</image>
+    <description>Die Standardausrüstung jeder Flucht. Verleiht kurzzeitig übernatürliche Geschwindigkeit — und einen fragwürdigen Nachgeschmack.</description>
+    <price>5 Credits</price>
   </item>
   <item>
     <tag>TARNUNG</tag>
