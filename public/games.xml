@@ -17,18 +17,18 @@
 <games>
   <game>
     <tag>AKTE 333</tag>
-    <name>Pac-Theo</name>
+    <name>LENNA503</name>
     <image>/games/pacman-thumb.svg</image>
-    <description>Steuere Theo durchs Labyrinth, sammle weiße Energy Drinks ein und entkomme den Verfolgerinnen.</description>
+    <description>Lenna503 wenn du das liest hat die ST11 dein Haus übernommen und ist cooler als du</description>
     <href>/pacman</href>
     <cta>SPIELEN</cta>
   </game>
   <game>
     <tag>FLUCHTVERSUCH</tag>
-    <name>Flappy Theo</name>
+    <name>Toilettenlecker</name>
     <image>/games/flappy-thumb.svg</image>
-    <description>Theo fliegt durch die Sektor-Türme. Ein Klick, ein Flügelschlag — und hoffentlich keine Kollision.</description>
+    <description>Afdler fliegt durch die Sektor-Türme. Ein Klick, ein Flügelschlag — und hoffentlich keine Kollision.</description>
     <href>/flappy</href>
-    <cta>SPIELEN</cta>
+    <cta>LOSFLIEGEN</cta>
   </game>
 </games>
