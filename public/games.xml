@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  SPIELE-DATENBANK
+  ================
+  Jedes <game> wird als Karte auf der Startseite angezeigt.
+  Felder:
+    <name>        Titel des Spiels
+    <image>       Pfad/URL zum Vorschaubild (z.B. /games/dein-bild.svg)
+    <description> Kurzbeschreibung
+    <href>        Pfad zur Unterseite, zu der der Button führt
+    <tag>         Kleines Etikett oben links auf der Karte
+    <cta>         Button-Text (optional, Standard: "SPIELEN")
+
+  Neue Karte einfach als weiteren <game>-Block hinzufügen,
+  bestehende löschen oder Texte/Bilder austauschen.
+-->
+<games>
+  <game>
+    <tag>AKTE 333</tag>
+    <name>Pac-Theo</name>
+    <image>/games/pacman-thumb.svg</image>
+    <description>Steuere Theo durchs Labyrinth, sammle weiße Energy Drinks ein und entkomme den Verfolgerinnen.</description>
+    <href>/pacman</href>
+    <cta>SPIELEN</cta>
+  </game>
+  <game>
+    <tag>FLUCHTVERSUCH</tag>
+    <name>Flappy Theo</name>
+    <image>/games/flappy-thumb.svg</image>
+    <description>Theo fliegt durch die Sektor-Türme. Ein Klick, ein Flügelschlag — und hoffentlich keine Kollision.</description>
+    <href>/flappy</href>
+    <cta>SPIELEN</cta>
+  </game>
+</games>

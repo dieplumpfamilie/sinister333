@@ -1,20 +1,26 @@
 # Sinister Scaring Theo
 
-Next.js-Website mit einem Pac-Man-artigen Browser-Spiel und einem Shop.
+Next.js-Website mit zwei Browser-Spielen und einer Startseite, die beide als
+Karten verlinkt.
 
 ## Struktur
 
 ```
 app/
-  layout.tsx      Root-Layout, Metadaten
-  page.tsx         Startseite (Spiel + Shop)
-  globals.css      Gesamtes Styling / Design-Tokens
+  layout.tsx        Root-Layout, Metadaten
+  page.tsx           Startseite (Kartenraster der Spiele)
+  pacman/page.tsx     Seite für "Pac-Theo"
+  flappy/page.tsx     Seite für "Flappy Theo"
+  globals.css         Gesamtes Styling / Design-Tokens
 components/
-  AlienGame.tsx    Das Spiel (Canvas, Steuerung, Spiellogik)
-  Shop.tsx         Lädt & rendert public/shop.xml
+  SiteNav.tsx         Navigation (auf allen Seiten)
+  GamesGrid.tsx        Kartenraster, liest public/games.xml
+  AlienGame.tsx         Pac-Man-artiges Spiel (Canvas)
+  FlappyGame.tsx         Flappy-Bird-artiges Spiel (Canvas)
 public/
-  shop.xml         ← HIER den Shop bearbeiten
-  items/*.svg       Platzhalter-Bilder für die Artikel
+  games.xml            ← Karten auf der Startseite bearbeiten
+  games/*.svg            Vorschaubilder der Karten
+  flappy/                ← Grafiken & Sounds von Flappy Theo bearbeiten
 ```
 
 ## Starten
@@ -26,41 +32,57 @@ npm run dev
 
 Danach [http://localhost:3000](http://localhost:3000) öffnen.
 
-## Spiel
+## Startseite bearbeiten
 
-- Steuerung: Pfeiltasten oder WASD
-- Theo (der Alien) sammelt weiße Energy Drinks ein
-- Drei Verfolgerinnen jagen ihn durchs Labyrinth (einfache Wegfindung)
-- 3 Leben, Punkte pro Energy Drink, Neustart per Knopf oder Tastendruck
-
-Die Maze-Größe, Geschwindigkeit (`TICK_MS`) und Zellengröße (`CELL`) lassen
-sich oben in `components/AlienGame.tsx` anpassen.
-
-## Shop bearbeiten
-
-Der komplette Shop-Inhalt kommt aus `public/shop.xml`. Kein Code nötig:
+Die Kartenübersicht kommt komplett aus `public/games.xml`:
 
 ```xml
-<item>
-  <tag>DRINK</tag>
-  <name>Weißer Energy Drink</name>
-  <image>/items/energy-drink.svg</image>
-  <description>Kurze Beschreibung des Artikels.</description>
-  <price>5 Credits</price>
-</item>
+<game>
+  <tag>AKTE 333</tag>
+  <name>Pac-Theo</name>
+  <image>/games/pacman-thumb.svg</image>
+  <description>Kurzbeschreibung.</description>
+  <href>/pacman</href>
+  <cta>SPIELEN</cta>
+</game>
 ```
 
-- Neuen Artikel hinzufügen: einen weiteren `<item>`-Block einfügen
-- Artikel entfernen: den Block löschen
-- Eigene Bilder: Datei nach `public/items/` legen und in `<image>` verlinken
-  (z.B. `/items/mein-bild.png`)
-- Der „Kaufen"-Button ist absichtlich funktionslos — die Logik dafür lässt
-  sich in `components/Shop.tsx` in der Funktion `handleBuy` ergänzen.
+Neue Karte = neuer `<game>`-Block (z. B. für ein drittes Spiel), Karte
+entfernen = Block löschen, eigenes Bild = Datei in `public/games/` ablegen
+und in `<image>` verlinken. Der Shop wurde entfernt.
+
+## Pac-Theo (`/pacman`)
+
+- Steuerung: Pfeiltasten oder WASD
+- Sammelt weiße Energy Drinks, wird von drei Verfolgerinnen gejagt
+  (einfache Wegfindung)
+- 3 Leben, Punktestand, Neustart per Knopf oder Tastendruck
+- Bugfix: drei Energy Drinks waren zuvor komplett von Wänden eingeschlossen
+  und unerreichbar. Die betroffene Wand-Reihe im Labyrinth (in
+  `components/AlienGame.tsx`) wurde geschlossen, sodass jetzt alle Drinks
+  erreichbar sind.
+
+## Flappy Theo (`/flappy`)
+
+Alle Grafiken und Sounds liegen unter `public/flappy/` und lassen sich ohne
+Code-Änderung ersetzen — einfach eine Datei mit demselben Namen hochladen:
+
+| Datei             | Bedeutung                            |
+|-------------------|----------------------------------------|
+| `background.svg`  | Hintergrund                             |
+| `tower.svg`       | Turm/Hindernis (oben gespiegelt)        |
+| `character.svg`   | Spielfigur                              |
+| `jump.wav`        | Sound beim Flügelschlag                 |
+| `hit.wav`         | Sound bei Kollision                     |
+| `music.wav`       | Hintergrundmusik (läuft in Schleife)    |
+
+Steuerung: Leertaste, Pfeiltaste hoch oder Klick auf den Bildschirm. Ein
+Ton-Knopf im HUD schaltet Musik und Effekte stumm.
 
 ## Design
 
 Motiv: geheime „Akte 333" / Überwachungsprotokoll über einen außerirdischen
 Ausreißer. Typografie: Stencil-Headline (Black Ops One), Schreibmaschine
-(Special Elite) für Fließtext, Mono (Space Mono) für Zahlen/HUD. Der
-Spielbereich ist als Überwachungsmonitor mit Scanlines gestaltet, der Shop
-als Karteikarten-Ablage.
+(Special Elite) für Fließtext, Mono (Space Mono) für Zahlen/HUD. Spielseiten
+sind als Überwachungsmonitor mit Scanlines gestaltet, die Startseite als
+Karteikarten-Übersicht.

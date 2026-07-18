@@ -1,5 +1,5 @@
-import AlienGame from "@/components/AlienGame";
-import Shop from "@/components/Shop";
+import SiteNav from "@/components/SiteNav";
+import GamesGrid from "@/components/GamesGrid";
 
 export default function Home() {
   return (
@@ -10,25 +10,14 @@ export default function Home() {
           SINISTER <span>SCARING</span> THEO
         </h1>
         <p className="site-subtitle">
-          Sichtungsprotokoll: außerirdisches Subjekt „Theo“, zuletzt gesehen
-          auf der Flucht durch Sektor 333.
+          Sichtungsprotokoll: außerirdisches Subjekt „Theo“, mehrfach bei
+          Fluchtversuchen durch Sektor 333 beobachtet.
         </p>
         <div className="stamp">GEHEIM</div>
+        <SiteNav />
       </header>
 
-      <section aria-label="Spiel">
-        <div className="section-head">
-          <span className="section-number">I.</span>
-          <h2 className="section-title">Live-Überwachung</h2>
-        </div>
-        <p className="section-note">
-          Theo wurde auf dem Überwachungsmonitor lokalisiert. Steuere ihn zu
-          den weißen Energy Drinks — und weg von den Verfolgerinnen.
-        </p>
-        <AlienGame />
-      </section>
-
-      <Shop />
+      <GamesGrid />
 
       <footer className="site-footer">
         <span>AKTE Nº 333 · SEKTOR UNBEKANNT</span>
