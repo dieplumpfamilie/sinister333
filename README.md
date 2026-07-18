@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sinister Scaring Theo
 
-## Getting Started
+Next.js-Website mit einem Pac-Man-artigen Browser-Spiel und einem Shop.
 
-First, run the development server:
+## Struktur
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+app/
+  layout.tsx      Root-Layout, Metadaten
+  page.tsx         Startseite (Spiel + Shop)
+  globals.css      Gesamtes Styling / Design-Tokens
+components/
+  AlienGame.tsx    Das Spiel (Canvas, Steuerung, Spiellogik)
+  Shop.tsx         Lädt & rendert public/shop.xml
+public/
+  shop.xml         ← HIER den Shop bearbeiten
+  items/*.svg       Platzhalter-Bilder für die Artikel
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Starten
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Danach [http://localhost:3000](http://localhost:3000) öffnen.
 
-## Learn More
+## Spiel
 
-To learn more about Next.js, take a look at the following resources:
+- Steuerung: Pfeiltasten oder WASD
+- Theo (der Alien) sammelt weiße Energy Drinks ein
+- Drei Verfolgerinnen jagen ihn durchs Labyrinth (einfache Wegfindung)
+- 3 Leben, Punkte pro Energy Drink, Neustart per Knopf oder Tastendruck
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Die Maze-Größe, Geschwindigkeit (`TICK_MS`) und Zellengröße (`CELL`) lassen
+sich oben in `components/AlienGame.tsx` anpassen.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Shop bearbeiten
 
-## Deploy on Vercel
+Der komplette Shop-Inhalt kommt aus `public/shop.xml`. Kein Code nötig:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```xml
+<item>
+  <tag>DRINK</tag>
+  <name>Weißer Energy Drink</name>
+  <image>/items/energy-drink.svg</image>
+  <description>Kurze Beschreibung des Artikels.</description>
+  <price>5 Credits</price>
+</item>
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Neuen Artikel hinzufügen: einen weiteren `<item>`-Block einfügen
+- Artikel entfernen: den Block löschen
+- Eigene Bilder: Datei nach `public/items/` legen und in `<image>` verlinken
+  (z.B. `/items/mein-bild.png`)
+- Der „Kaufen"-Button ist absichtlich funktionslos — die Logik dafür lässt
+  sich in `components/Shop.tsx` in der Funktion `handleBuy` ergänzen.
+
+## Design
+
+Motiv: geheime „Akte 333" / Überwachungsprotokoll über einen außerirdischen
+Ausreißer. Typografie: Stencil-Headline (Black Ops One), Schreibmaschine
+(Special Elite) für Fließtext, Mono (Space Mono) für Zahlen/HUD. Der
+Spielbereich ist als Überwachungsmonitor mit Scanlines gestaltet, der Shop
+als Karteikarten-Ablage.

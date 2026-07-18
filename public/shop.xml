@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  FELDAUSRÜSTUNG — Shop-Datenbank
+  ================================
+  Jedes <item> wird als Karte im Shop angezeigt.
+  Felder:
+    <name>        Artikelname
+    <image>       Pfad/URL zum Bild (z.B. /items/dein-bild.png)
+    <description> Kurzbeschreibung
+    <price>       Anzeige-Preis (frei wählbarer Text, z.B. "12 Credits")
+    <tag>         Kleines Etikett oben links auf der Karte
+
+  Neue Artikel einfach als weiteren <item>-Block hinzufügen,
+  bestehende löschen oder Texte/Bilder austauschen.
+  Der Kaufen-Button ist aktuell ohne Funktion hinterlegt.
+-->
+<shop>
+  <item>
+    <tag>DRINK</tag>
+    <name>Weißer Energy Drink</name>
+    <image>/items/energy-drink.svg</image>
+    <description>Die Standardausrüstung jeder Flucht. Verleiht kurzzeitig übernatürliche Geschwindigkeit — und einen fragwürdigen Nachgeschmack.</description>
+    <price>5 Credits</price>
+  </item>
+  <item>
+    <tag>TARNUNG</tag>
+    <name>Feldjacke, Modell 333</name>
+    <image>/items/uniform-jacket.svg</image>
+    <description>Originalgetreu nachgebaute Uniform. Hilft nicht wirklich beim Verstecken, sieht aber offiziell aus.</description>
+    <price>18 Credits</price>
+  </item>
+  <item>
+    <tag>AUSWEIS</tag>
+    <name>Akte №333</name>
+    <image>/items/case-file.svg</image>
+    <description>Streng geheime Unterlagen über Theos Sichtungen. Enthält vermutlich mehr Schwärzungen als Text.</description>
+    <price>12 Credits</price>
+  </item>
+  <item>
+    <tag>AUSRÜSTUNG</tag>
+    <name>Nachtsicht-Visier</name>
+    <image>/items/visor.svg</image>
+    <description>Für den Fall, dass die Verfolgerinnen auch nachts unterwegs sind. Batterie nicht enthalten.</description>
+    <price>22 Credits</price>
+  </item>
+  <item>
+    <tag>PROVIANT</tag>
+    <name>Energy-Drink-Kiste (6er)</name>
+    <image>/items/energy-drink-crate.svg</image>
+    <description>Für lange Fluchtnächte. Reicht angeblich für ganze drei Verfolgungsjagden.</description>
+    <price>26 Credits</price>
+  </item>
+  <item>
+    <tag>SIGNAL</tag>
+    <name>Notfall-Peilsender</name>
+    <image>/items/beacon.svg</image>
+    <description>Sendet ein Signal an — niemanden Bestimmtes. Wirkt trotzdem beruhigend in der Tasche zu haben.</description>
+    <price>15 Credits</price>
+  </item>
+</shop>
