@@ -1,26 +1,29 @@
 import SiteNav from "@/components/SiteNav";
 import GamesGrid from "@/components/GamesGrid";
+import MusicPlayer from "@/components/MusicPlayer";
 
 export default function Home() {
   return (
     <main className="shell">
       <header className="site-header">
-        <span className="case-tag">333IQ JOE GOLDBERG-MAXXING</span>
+        <span className="case-tag">AKTE Nº 333 — NICHT FREIGEGEBEN</span>
         <h1 className="site-title">
-          BIG <span> BAD</span> JONNY
+          SINISTER <span>SCARING</span> THEO
         </h1>
         <p className="site-subtitle">
-          DIE LINKEN HABEN ANGST VOR DIESER WEBSITE DIGGA MAN DIGGA
+          Sichtungsprotokoll: außerirdisches Subjekt „Theo“, mehrfach bei
+          Fluchtversuchen durch Sektor 333 beobachtet.
         </p>
-        <div className="stamp">NIGGA</div>
+        <div className="stamp">GEHEIM</div>
         <SiteNav />
+        <MusicPlayer />
       </header>
 
       <GamesGrid />
 
       <footer className="site-footer">
-        <span>SEI SCHLAU WÄHL BLAU LIEBER TOT ALS ROT</span>
-        <span>S.T. MAFIA © {new Date().getFullYear()}</span>
+        <span>AKTE Nº 333 · SEKTOR UNBEKANNT</span>
+        <span>SINISTER SCARING THEO © {new Date().getFullYear()}</span>
       </footer>
     </main>
   );
