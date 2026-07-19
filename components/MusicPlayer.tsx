@@ -2,38 +2,64 @@
 
 import { useEffect, useRef, useState } from "react";
 
-/**
- * Hintergrundmusik der Startseite.
- * Datei ersetzen, um den Titel zu ändern (gleicher Dateiname
- * oder Pfad unten anpassen):
- *   /public/music/theme.wav
- */
 const TRACK_SRC = "/music/theme.wav";
-const DEFAULT_VOLUME = 0.4;
+const DEFAULT_VOLUME = 0.5;
 
 export default function MusicPlayer() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const [playing, setPlaying] = useState(false);
+  const [playing, setPlaying] = useState(true);     // ← Hier auf true setzen
   const [volume, setVolume] = useState(DEFAULT_VOLUME);
+  const [hasInteracted, setHasInteracted] = useState(false);
 
   useEffect(() => {
     const audio = new Audio(TRACK_SRC);
     audio.loop = true;
     audio.volume = DEFAULT_VOLUME;
     audioRef.current = audio;
+
+    // Automatisch abspielen versuchen
+    const tryPlay = () => {
+      audio.play()
+        .then(() => {
+          setPlaying(true);
+        })
+        .catch(() => {
+          // Browser blockt Autoplay → warten auf User-Interaktion
+          setPlaying(false);
+        });
+    };
+
+    tryPlay();
+
+    // Fallback: Bei Klick auf Seite starten (falls Autoplay blockiert wurde)
+    const handleFirstInteraction = () => {
+      if (!playing && audioRef.current) {
+        audioRef.current.play().catch(() => {});
+        setPlaying(true);
+        setHasInteracted(true);
+      }
+    };
+
+    document.addEventListener("click", handleFirstInteraction, { once: true });
+
     return () => {
       audio.pause();
+      document.removeEventListener("click", handleFirstInteraction);
       audioRef.current = null;
     };
   }, []);
 
+  // Volume ändern
   useEffect(() => {
-    if (audioRef.current) audioRef.current.volume = volume;
+    if (audioRef.current) {
+      audioRef.current.volume = volume;
+    }
   }, [volume]);
 
   const toggle = () => {
     const audio = audioRef.current;
     if (!audio) return;
+
     if (playing) {
       audio.pause();
       setPlaying(false);
