@@ -16,16 +16,16 @@
 -->
 <games>
   <game>
-    <tag>AKTE 333</tag>
-    <name>Pac-Theo</name>
+    <tag>IQ 333</tag>
+    <name>AGHARTA MAN</name>
     <image>/games/pacman-thumb.svg</image>
-    <description>Steuere Theo durchs Labyrinth, sammle weiße Energy Drinks ein und entkomme den Verfolgerinnen.</description>
+    <description>Steuere Theo durchs Labyrinth, sammle WHITE MONSTERS ein und entkomme den Verfolgerinnen.</description>
     <href>/pacman</href>
-    <cta>SPIELEN</cta>
+    <cta>CLAP BOOTY CHEECKS</cta>
   </game>
   <game>
     <tag>FLUCHTVERSUCH</tag>
-    <name>Flappy Theo</name>
+    <name>Flappy JONNY</name>
     <image>/games/flappy-thumb.svg</image>
     <description>Theo fliegt durch die Sektor-Türme. Ein Klick, ein Flügelschlag — und hoffentlich keine Kollision.</description>
     <href>/flappy</href>

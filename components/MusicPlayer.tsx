@@ -52,7 +52,7 @@ export default function MusicPlayer() {
       >
         {playing ? "⏸" : "▶"}
       </button>
-      <span className="music-player-label">AKUSTIK-PROTOKOLL</span>
+      <span className="music-player-label">LAUTSTÄRKE</span>
       <input
         className="music-player-volume"
         type="range"
