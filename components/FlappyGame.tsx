@@ -296,7 +296,7 @@ export default function FlappyGame() {
   };
 
   return (
-    <div className="monitor">
+    <div className="monitor monitor--compact">
       <div className="monitor-bezel" onClick={flap}>
         <canvas
           ref={canvasRef}

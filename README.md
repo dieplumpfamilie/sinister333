@@ -51,6 +51,19 @@ Neue Karte = neuer `<game>`-Block (z. B. für ein drittes Spiel), Karte
 entfernen = Block löschen, eigenes Bild = Datei in `public/games/` ablegen
 und in `<image>` verlinken. Der Shop wurde entfernt.
 
+## Musik auf der Startseite
+
+Oben auf der Startseite gibt es einen kleinen Player mit Play/Pause-Knopf
+und Lautstärkeregler (`components/MusicPlayer.tsx`).
+
+- Titel ändern: Datei unter `public/music/theme.wav` durch eine eigene
+  ersetzen (gleicher Dateiname), oder in `MUSIC_PLAYER`-Konstante
+  `TRACK_SRC` in `components/MusicPlayer.tsx` einen anderen Pfad eintragen
+- Standardlautstärke ändern: Konstante `DEFAULT_VOLUME` in derselben Datei
+  (Wert zwischen 0 und 1)
+- Die Musik startet nicht automatisch (Browser blockieren Autoplay mit
+  Ton) — Besucher starten sie über den Play-Knopf selbst
+
 ## Pac-Theo (`/pacman`)
 
 - Steuerung: Pfeiltasten oder WASD
@@ -78,6 +91,11 @@ Code-Änderung ersetzen — einfach eine Datei mit demselben Namen hochladen:
 
 Steuerung: Leertaste, Pfeiltaste hoch oder Klick auf den Bildschirm. Ein
 Ton-Knopf im HUD schaltet Musik und Effekte stumm.
+
+Das Spielfenster ist bewusst schmaler begrenzt (`.monitor--compact` in
+`app/globals.css`), damit es auf einem normalen PC-Monitor komplett
+sichtbar ist, statt über die volle Seitenbreite gestreckt zu werden. Breite
+lässt sich dort über `max-width` anpassen.
 
 ## Design
 

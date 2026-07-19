@@ -151,6 +151,78 @@ button {
 }
 
 /* --------------------------------------------------------- */
+/* music player                                                */
+/* --------------------------------------------------------- */
+
+.music-player {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  background: #16160f;
+  max-width: 340px;
+}
+
+.music-player-toggle {
+  flex: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 2px;
+  border: 1px solid var(--toxic-dim);
+  background: transparent;
+  color: var(--toxic);
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.music-player-toggle:hover {
+  background: var(--toxic);
+  color: #0a0d08;
+}
+
+.music-player-label {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  color: var(--ink-dim);
+  white-space: nowrap;
+}
+
+.music-player-volume {
+  flex: 1;
+  appearance: none;
+  height: 3px;
+  background: var(--line);
+  border-radius: 2px;
+  outline: none;
+}
+
+.music-player-volume::-webkit-slider-thumb {
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--toxic);
+  cursor: pointer;
+  border: 2px solid #0a0d08;
+}
+
+.music-player-volume::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--toxic);
+  cursor: pointer;
+  border: 2px solid #0a0d08;
+}
+
+/* --------------------------------------------------------- */
 /* section headers                                            */
 /* --------------------------------------------------------- */
 
@@ -197,6 +269,17 @@ button {
   box-shadow:
     0 0 0 6px #1a1a16,
     0 0 40px rgba(166, 255, 47, 0.06);
+}
+
+.monitor--compact {
+  max-width: 340px;
+  margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+  .monitor--compact {
+    max-width: 380px;
+  }
 }
 
 .monitor-bezel {
