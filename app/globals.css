@@ -1,21 +1,37 @@
-@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Special+Elite&family=Space+Mono:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Stalinist+One&family=PT+Sans:wght@400;700&family=JetBrains+Mono:wght@400;500;700&display=swap");
+
+/* ===========================================================
+   AKTE 333 — GOSPLAN EDITION
+   Sowjetisch-konstruktivistisches Redesign.
+   Farbwelt: verblasstes Rot, Messing/Gold, Manifest-Papier,
+   Oxblood-Schwarz. Typografie: Plakat-Stencil, Amtsformular,
+   Fernschreiber-Mono.
+   =========================================================== */
 
 :root {
-  --bg-dark: #121210;
-  --bg-dark-2: #1a1a16;
-  --paper: #ece4cf;
-  --paper-dim: #d8cfb4;
-  --ink: #e9e4d4;
-  --ink-dim: #a9a496;
-  --toxic: #a6ff2f;
-  --toxic-dim: #6f9c1f;
-  --blood: #9c2626;
-  --blood-bright: #c73333;
-  --line: #3a382f;
+  --bg-dark: #150806;
+  --bg-dark-2: #200f0a;
+  --paper: #ece1c2;
+  --paper-dim: #d8c89c;
+  --ink: #ece1c2;
+  --ink-dim: #b3a480;
 
-  --font-display: "Black Ops One", "Arial Narrow", sans-serif;
-  --font-body: "Special Elite", "Courier New", monospace;
-  --font-mono: "Space Mono", "Courier New", monospace;
+  --red: #c81e1e;
+  --red-bright: #e6402f;
+  --red-deep: #6e1010;
+
+  --gold: #d1a13a;
+  --gold-bright: #e8c164;
+  --gold-dim: #8a6a2a;
+
+  --amber: #e8b64a;
+  --amber-dim: #a67c22;
+
+  --line: #4a2418;
+
+  --font-display: "Stalinist One", "Arial Narrow", sans-serif;
+  --font-body: "PT Sans", "Arial", sans-serif;
+  --font-mono: "JetBrains Mono", "Courier New", monospace;
 }
 
 * {
@@ -31,14 +47,21 @@ body {
 body {
   background-color: var(--bg-dark);
   background-image:
-    radial-gradient(ellipse at top, #1e1e18 0%, var(--bg-dark) 55%),
+    radial-gradient(ellipse at top right, rgba(200, 40, 30, 0.16) 0%, transparent 55%),
+    radial-gradient(ellipse at 10% 100%, rgba(200, 40, 30, 0.08) 0%, transparent 50%),
+    repeating-conic-gradient(
+      from 0deg at 100% 0%,
+      rgba(216, 196, 154, 0.035) 0deg 5deg,
+      transparent 5deg 11deg
+    ),
     repeating-linear-gradient(
       0deg,
       rgba(255, 255, 255, 0.015) 0px,
       rgba(255, 255, 255, 0.015) 1px,
       transparent 1px,
       transparent 3px
-    );
+    ),
+    var(--bg-dark);
   color: var(--ink);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
@@ -55,8 +78,8 @@ button {
 }
 
 ::selection {
-  background: var(--toxic);
-  color: #101008;
+  background: var(--red);
+  color: var(--paper);
 }
 
 /* --------------------------------------------------------- */
@@ -70,84 +93,116 @@ button {
 }
 
 .site-header {
-  padding: 34px 0 22px;
-  border-bottom: 2px dashed var(--line);
-  margin-bottom: 40px;
+  padding: 40px 0 26px;
+  border-top: 6px solid var(--red);
+  border-bottom: 3px double var(--gold-dim);
+  margin-bottom: 44px;
+  margin-top: 18px;
   position: relative;
+  background: linear-gradient(180deg, rgba(200, 30, 20, 0.08), transparent 55%);
 }
 
 .case-tag {
   display: inline-block;
   font-family: var(--font-mono);
   font-size: 11px;
-  letter-spacing: 0.18em;
-  color: var(--toxic-dim);
-  border: 1px solid var(--toxic-dim);
-  padding: 3px 9px;
-  border-radius: 2px;
-  margin-bottom: 14px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--paper);
+  background: var(--red);
+  padding: 5px 16px 5px 12px;
+  clip-path: polygon(0 0, 100% 0, 94% 50%, 100% 100%, 0 100%);
+  margin-bottom: 16px;
+  text-transform: uppercase;
 }
 
 .site-title {
   font-family: var(--font-display);
-  font-size: clamp(32px, 6vw, 58px);
-  letter-spacing: 0.02em;
-  line-height: 1.02;
+  font-weight: 400;
+  font-size: clamp(30px, 5.6vw, 54px);
+  letter-spacing: 0.01em;
+  line-height: 1.08;
   margin: 0;
-  color: var(--paper);
-  text-shadow: 3px 3px 0 var(--blood);
+  color: var(--gold-bright);
+  text-shadow: 3px 3px 0 var(--red-deep);
 }
 
 .site-title span {
-  color: var(--toxic);
-  text-shadow: 3px 3px 0 #223a06;
+  color: var(--red-bright);
+  text-shadow: 3px 3px 0 #241006;
 }
 
 .site-subtitle {
   font-family: var(--font-mono);
   font-size: 13px;
   color: var(--ink-dim);
-  margin-top: 10px;
-  letter-spacing: 0.04em;
+  margin-top: 12px;
+  letter-spacing: 0.03em;
+  max-width: 62ch;
 }
 
 .stamp {
   position: absolute;
-  top: 26px;
-  right: 0;
-  border: 3px solid var(--blood-bright);
-  color: var(--blood-bright);
+  top: 30px;
+  right: 4px;
+  width: 104px;
+  height: 104px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 50%;
+  border: 3px solid var(--red-bright);
+  box-shadow:
+    0 0 0 3px var(--bg-dark),
+    0 0 0 6px var(--gold-dim);
+  color: var(--red-bright);
   font-family: var(--font-display);
-  font-size: 13px;
-  padding: 6px 12px;
-  transform: rotate(8deg);
-  border-radius: 4px;
-  opacity: 0.85;
-  letter-spacing: 0.08em;
+  font-size: 9.5px;
+  line-height: 1.25;
+  letter-spacing: 0.04em;
+  padding: 10px;
+  transform: rotate(-11deg);
+  opacity: 0.9;
+  mix-blend-mode: screen;
 }
 
 .site-nav {
   display: flex;
-  gap: 18px;
-  margin-top: 22px;
+  gap: 12px;
+  margin-top: 26px;
   flex-wrap: wrap;
 }
 
 .site-nav a {
   font-family: var(--font-mono);
   font-size: 12px;
-  letter-spacing: 0.08em;
-  color: var(--ink-dim);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--paper-dim);
   text-decoration: none;
-  border: 1px solid var(--line);
-  padding: 7px 12px;
-  border-radius: 2px;
-  transition: color 0.15s ease, border-color 0.15s ease;
+  background: rgba(236, 225, 194, 0.04);
+  border: 1px solid var(--gold-dim);
+  padding: 7px 14px 7px 10px;
+  border-radius: 1px;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.site-nav a::before {
+  content: "\2605";
+  color: var(--gold);
+  margin-right: 6px;
+  font-size: 10px;
 }
 
 .site-nav a:hover {
-  color: var(--toxic);
-  border-color: var(--toxic-dim);
+  color: var(--paper);
+  border-color: var(--red-bright);
+  background: var(--red);
+}
+
+.site-nav a:hover::before {
+  color: var(--paper);
 }
 
 /* --------------------------------------------------------- */
@@ -158,11 +213,11 @@ button {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-top: 18px;
+  margin-top: 20px;
   padding: 10px 14px;
-  border: 1px solid var(--line);
-  border-radius: 2px;
-  background: #16160f;
+  border: 1px solid var(--gold-dim);
+  border-radius: 1px;
+  background: linear-gradient(180deg, #22100b, #170b07);
   max-width: 340px;
 }
 
@@ -170,27 +225,26 @@ button {
   flex: none;
   width: 30px;
   height: 30px;
-  border-radius: 2px;
-  border: 1px solid var(--toxic-dim);
-  background: transparent;
-  color: var(--toxic);
-  font-size: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--red-bright);
+  background: radial-gradient(circle at 35% 30%, #d1372a, var(--red-deep));
+  color: var(--paper);
+  font-size: 11px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.15s ease, color 0.15s ease;
+  transition: filter 0.15s ease;
 }
 
 .music-player-toggle:hover {
-  background: var(--toxic);
-  color: #0a0d08;
+  filter: brightness(1.25);
 }
 
 .music-player-label {
   font-family: var(--font-mono);
   font-size: 10.5px;
   letter-spacing: 0.1em;
-  color: var(--ink-dim);
+  color: var(--gold-dim);
   white-space: nowrap;
 }
 
@@ -208,18 +262,18 @@ button {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: var(--toxic);
+  background: var(--gold);
   cursor: pointer;
-  border: 2px solid #0a0d08;
+  border: 2px solid #170b07;
 }
 
 .music-player-volume::-moz-range-thumb {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: var(--toxic);
+  background: var(--gold);
   cursor: pointer;
-  border: 2px solid #0a0d08;
+  border: 2px solid #170b07;
 }
 
 /* --------------------------------------------------------- */
@@ -236,15 +290,22 @@ button {
 .section-number {
   font-family: var(--font-mono);
   font-size: 13px;
-  color: var(--toxic-dim);
+  font-weight: 700;
+  color: var(--bg-dark);
+  background: var(--gold);
+  padding: 1px 8px;
+  border-radius: 1px;
 }
 
 .section-title {
   font-family: var(--font-display);
-  font-size: clamp(20px, 3vw, 28px);
+  font-weight: 400;
+  font-size: clamp(19px, 2.8vw, 27px);
   color: var(--paper);
   margin: 0;
   letter-spacing: 0.01em;
+  border-bottom: 2px solid var(--red);
+  padding-bottom: 2px;
 }
 
 .section-note {
@@ -256,19 +317,49 @@ button {
   line-height: 1.6;
 }
 
+.section-note code {
+  font-family: var(--font-mono);
+  background: rgba(216, 196, 154, 0.08);
+  border: 1px solid var(--line);
+  padding: 1px 5px;
+  border-radius: 1px;
+  color: var(--gold-bright);
+}
+
 /* --------------------------------------------------------- */
-/* game / surveillance monitor                                */
+/* game / überwachungs-monitor                                */
 /* --------------------------------------------------------- */
 
 .monitor {
   position: relative;
-  background: #0a0d08;
-  border: 1px solid var(--line);
-  border-radius: 6px;
+  background: #0c0503;
+  border: 1px solid var(--gold-dim);
+  border-radius: 4px;
   padding: 14px;
   box-shadow:
-    0 0 0 6px #1a1a16,
-    0 0 40px rgba(166, 255, 47, 0.06);
+    0 0 0 6px #200f0a,
+    0 0 0 7px var(--line),
+    0 0 40px rgba(200, 40, 30, 0.1);
+}
+
+.monitor::before,
+.monitor::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, var(--gold-bright), var(--gold-dim));
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.4);
+}
+
+.monitor::before {
+  left: 4px;
+}
+
+.monitor::after {
+  right: 4px;
 }
 
 .monitor--compact {
@@ -285,8 +376,8 @@ button {
 .monitor-bezel {
   position: relative;
   overflow: hidden;
-  border-radius: 3px;
-  background: #060805;
+  border-radius: 2px;
+  background: #060302;
 }
 
 .monitor-scanlines {
@@ -295,8 +386,8 @@ button {
   inset: 0;
   background: repeating-linear-gradient(
     0deg,
-    rgba(166, 255, 47, 0.05) 0px,
-    rgba(166, 255, 47, 0.05) 1px,
+    rgba(232, 182, 74, 0.05) 0px,
+    rgba(232, 182, 74, 0.05) 1px,
     transparent 1px,
     transparent 3px
   );
@@ -323,13 +414,13 @@ button {
   align-items: center;
   font-family: var(--font-mono);
   font-size: 12px;
-  color: var(--toxic);
+  color: var(--amber);
   padding: 10px 4px 2px;
   letter-spacing: 0.05em;
 }
 
 .monitor-hud .lives {
-  color: var(--blood-bright);
+  color: var(--red-bright);
 }
 
 .monitor-controls-hint {
@@ -350,16 +441,17 @@ button {
   text-align: center;
   flex-direction: column;
   gap: 14px;
-  background: rgba(6, 8, 5, 0.88);
-  border-radius: 3px;
+  background: rgba(9, 4, 3, 0.9);
+  border-radius: 2px;
 }
 
 .monitor-overlay h3 {
   font-family: var(--font-display);
-  color: var(--toxic);
-  font-size: 22px;
+  font-weight: 400;
+  color: var(--amber);
+  font-size: 21px;
   margin: 0;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
 }
 
 .monitor-overlay p {
@@ -371,28 +463,29 @@ button {
 }
 
 .btn-restart {
-  background: transparent;
-  border: 2px solid var(--toxic);
-  color: var(--toxic);
+  background: var(--red);
+  border: 2px solid var(--red-bright);
+  color: var(--paper);
   font-family: var(--font-mono);
+  font-weight: 700;
   font-size: 12px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   padding: 10px 18px;
-  border-radius: 2px;
-  transition: background 0.15s ease, color 0.15s ease;
+  border-radius: 1px;
+  transition: background 0.15s ease, transform 0.1s ease;
 }
 
 .btn-restart:hover {
-  background: var(--toxic);
-  color: #0a0d08;
+  background: var(--red-bright);
+  transform: translateY(-1px);
 }
 
 /* --------------------------------------------------------- */
-/* shop                                                        */
+/* sichtungsprotokolle / ration-karten                         */
 /* --------------------------------------------------------- */
 
 .shop-section {
-  margin-top: 64px;
+  margin-top: 68px;
 }
 
 .shop-grid {
@@ -409,43 +502,59 @@ button {
 
 .item-card {
   background: var(--paper);
-  color: #201d14;
-  border-radius: 3px;
-  padding: 16px;
+  color: #241a0f;
+  border-radius: 2px;
+  padding: 18px 16px 16px;
   position: relative;
-  border: 1px solid #b8ae8c;
+  border: 1px solid var(--gold-dim);
   display: flex;
   flex-direction: column;
   gap: 10px;
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.18);
 }
 
 .item-card::before {
   content: attr(data-tag);
   position: absolute;
-  top: -9px;
+  top: -10px;
   left: 14px;
-  background: var(--blood);
+  background: var(--red);
   color: var(--paper);
   font-family: var(--font-mono);
+  font-weight: 700;
   font-size: 10px;
-  letter-spacing: 0.08em;
-  padding: 2px 8px;
-  border-radius: 2px;
+  letter-spacing: 0.07em;
+  padding: 3px 9px;
+  border-radius: 1px;
+  box-shadow: 0 2px 0 var(--red-deep);
+}
+
+.item-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 22px 22px 0;
+  border-color: transparent var(--gold-dim) transparent transparent;
+  opacity: 0.8;
 }
 
 .item-thumb {
   width: 100%;
   aspect-ratio: 4 / 3;
-  border-radius: 2px;
-  border: 1px dashed #a89c72;
+  border-radius: 1px;
+  border: 1px dashed var(--gold-dim);
   background: repeating-linear-gradient(
       45deg,
-      rgba(0, 0, 0, 0.04) 0px,
-      rgba(0, 0, 0, 0.04) 8px,
+      rgba(0, 0, 0, 0.05) 0px,
+      rgba(0, 0, 0, 0.05) 8px,
       transparent 8px,
       transparent 16px
     ),
-    #e2d9bd;
+    #e2d5ac;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -460,16 +569,18 @@ button {
 
 .item-name {
   font-family: var(--font-display);
-  font-size: 16px;
+  font-weight: 400;
+  font-size: 15px;
   margin: 0;
   letter-spacing: 0.01em;
+  color: var(--red-deep);
 }
 
 .item-desc {
   font-family: var(--font-body);
   font-size: 12.5px;
   line-height: 1.55;
-  color: #4a4530;
+  color: #4a3a20;
   margin: 0;
   flex-grow: 1;
 }
@@ -485,24 +596,26 @@ button {
 .item-price {
   font-family: var(--font-mono);
   font-size: 12px;
-  color: #5a5237;
+  color: #5a4a2a;
 }
 
 .btn-buy {
-  background: #201d14;
-  color: var(--toxic);
-  border: none;
+  background: var(--red-deep);
+  color: var(--gold-bright);
+  border: 1px solid var(--red);
   font-family: var(--font-mono);
+  font-weight: 700;
   font-size: 11px;
-  letter-spacing: 0.08em;
-  padding: 8px 14px;
-  border-radius: 2px;
-  transition: transform 0.1s ease;
+  letter-spacing: 0.07em;
+  padding: 9px 16px;
+  border-radius: 1px;
+  transition: transform 0.1s ease, background 0.15s ease;
   text-decoration: none;
   display: inline-block;
 }
 
 .btn-buy:hover {
+  background: var(--red);
   transform: translateY(-1px);
 }
 
@@ -512,13 +625,13 @@ button {
 
 .btn-mute {
   background: transparent;
-  border: 1px solid var(--toxic-dim);
-  color: var(--toxic);
+  border: 1px solid var(--amber-dim);
+  color: var(--amber);
   font-family: var(--font-mono);
   font-size: 11px;
   letter-spacing: 0.05em;
   padding: 4px 9px;
-  border-radius: 2px;
+  border-radius: 1px;
 }
 
 .monitor-bezel {
@@ -532,13 +645,13 @@ button {
 }
 
 /* --------------------------------------------------------- */
-/* footer                                                      */
+/* fusszeile                                                   */
 /* --------------------------------------------------------- */
 
 .site-footer {
-  margin-top: 70px;
+  margin-top: 74px;
   padding-top: 20px;
-  border-top: 2px dashed var(--line);
+  border-top: 3px double var(--gold-dim);
   font-family: var(--font-mono);
   font-size: 11px;
   color: var(--ink-dim);
@@ -546,4 +659,9 @@ button {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 8px;
+}
+
+.site-footer span:first-child::before {
+  content: "\2605 ";
+  color: var(--gold);
 }
