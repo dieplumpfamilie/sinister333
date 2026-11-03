@@ -31,4 +31,12 @@
     <href>/flappy</href>
     <cta>SPIELEN</cta>
   </game>
+  <game>
+    <tag>WIDERSTAND</tag>
+    <name>THEO SHOOTER</name>
+    <image>/games/shooter-thumb.svg</image>
+    <description>Top-Down-Shooter: Halte die Arena gegen Welle um Welle von Verfolgerinnen, nutze die Kisten als Deckung und sammle Heil-Items.</description>
+    <href>/shooter</href>
+    <cta>FEUER FREI</cta>
+  </game>
 </games>

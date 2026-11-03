@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Boden-Kachel (64x64), wird nahtlos wiederholt -->
+  <rect width="64" height="64" fill="#1a0d09"/>
+  <rect x="1" y="1" width="62" height="62" fill="#211009" stroke="#2f1810" stroke-width="2"/>
+  <path d="M0 32 H64 M32 0 V64" stroke="#2a150d" stroke-width="1"/>
+  <circle cx="12" cy="14" r="1.2" fill="#3a1f14"/>
+  <circle cx="47" cy="22" r="1" fill="#3a1f14"/>
+  <circle cx="22" cy="50" r="1.4" fill="#3a1f14"/>
+  <circle cx="54" cy="52" r="1" fill="#3a1f14"/>
+  <path d="M8 40 l6 -3 M40 8 l5 4" stroke="#2f1810" stroke-width="1.5"/>
+</svg>

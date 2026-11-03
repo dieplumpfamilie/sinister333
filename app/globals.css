@@ -373,6 +373,15 @@ button {
   }
 }
 
+.monitor--wide {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.monitor--wide canvas {
+  image-rendering: auto;
+}
+
 .monitor-bezel {
   position: relative;
   overflow: hidden;

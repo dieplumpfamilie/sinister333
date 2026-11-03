@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 8" width="24" height="8">
+  <!-- Geschoss, fliegt nach RECHTS -->
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0" stop-color="#e8b64a" stop-opacity="0"/>
+      <stop offset="0.6" stop-color="#ffcf55" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#fff6c8"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="1.5" width="24" height="5" rx="2.5" fill="url(#g)"/>
+  <circle cx="21" cy="4" r="2.2" fill="#fff"/>
+</svg>

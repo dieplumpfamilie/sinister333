@@ -6,6 +6,7 @@ export default function SiteNav() {
       <Link href="/">Startseite</Link>
       <Link href="/pacman">Pac-Theo</Link>
       <Link href="/flappy">Flappy Theo</Link>
+      <Link href="/shooter">Theo Shooter</Link>
     </nav>
   );
 }

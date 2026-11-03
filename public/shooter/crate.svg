@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Kiste von oben (64x64) – dient als Deckung, blockiert Spieler, Gegner und Schüsse -->
+  <rect x="1" y="1" width="62" height="62" fill="#7a5230" stroke="#2a180a" stroke-width="2"/>
+  <rect x="6" y="6" width="52" height="52" fill="#946238" stroke="#5a3a1e" stroke-width="2"/>
+  <path d="M6 6 L58 58 M58 6 L6 58" stroke="#5a3a1e" stroke-width="4"/>
+  <path d="M6 22 H58 M6 42 H58" stroke="#6e4726" stroke-width="1" opacity="0.6"/>
+  <circle cx="9" cy="9" r="2" fill="#d1a13a"/>
+  <circle cx="55" cy="9" r="2" fill="#d1a13a"/>
+  <circle cx="9" cy="55" r="2" fill="#d1a13a"/>
+  <circle cx="55" cy="55" r="2" fill="#d1a13a"/>
+</svg>

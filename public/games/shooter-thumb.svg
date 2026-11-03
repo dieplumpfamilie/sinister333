@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <!-- Vorschaubild für die Startseite (4:3) -->
+  <defs>
+    <pattern id="f" width="64" height="64" patternUnits="userSpaceOnUse">
+      <rect width="64" height="64" fill="#211009"/>
+      <rect x="1" y="1" width="62" height="62" fill="none" stroke="#2f1810" stroke-width="2"/>
+    </pattern>
+    <radialGradient id="v" cx="0.5" cy="0.5" r="0.75">
+      <stop offset="0.5" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.75"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#f)"/>
+  <!-- Kisten -->
+  <g transform="translate(40 40)"><rect width="64" height="64" fill="#946238" stroke="#2a180a" stroke-width="3"/><path d="M6 6 L58 58 M58 6 L6 58" stroke="#5a3a1e" stroke-width="4"/></g>
+  <g transform="translate(300 200)"><rect width="64" height="64" fill="#946238" stroke="#2a180a" stroke-width="3"/><path d="M6 6 L58 58 M58 6 L6 58" stroke="#5a3a1e" stroke-width="4"/></g>
+  <!-- Schüsse -->
+  <g fill="#ffcf55"><rect x="190" y="146" width="26" height="5" rx="2.5"/><rect x="236" y="146" width="26" height="5" rx="2.5" opacity="0.8"/><rect x="282" y="146" width="26" height="5" rx="2.5" opacity="0.6"/></g>
+  <!-- Gegner -->
+  <g transform="translate(330 120)"><ellipse cx="0" cy="0" rx="14" ry="20" fill="#7a1f1f"/><circle cx="-5" cy="0" r="11" fill="#9aa88f"/><circle cx="-10" cy="-5" r="2.5" fill="#ffd23a"/><circle cx="-10" cy="5" r="2.5" fill="#ffd23a"/></g>
+  <g transform="translate(70 230) scale(1.4)"><circle r="16" fill="#3b2a52" stroke="#1e1230" stroke-width="2"/><rect x="2" y="-6" width="9" height="12" rx="2" fill="#e6402f"/></g>
+  <!-- Spieler -->
+  <g transform="translate(150 148)"><ellipse rx="12" ry="22" fill="#3f6b5a" stroke="#264236" stroke-width="2"/><circle r="11" fill="#c08066" stroke="#8f5a44" stroke-width="2"/><rect x="8" y="-4" width="34" height="7" rx="2" fill="#2b2b2b"/></g>
+  <rect width="400" height="300" fill="url(#v)"/>
+</svg>
